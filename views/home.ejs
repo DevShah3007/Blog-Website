@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+  <h1>Home</h1>
+  <p><%= home_content %></p>
+  <% postsArray.forEach(function(post){ %>
+    <h1><%= post.title %></h1>
+    <p><%= post.content.slice(0,200) + "..." %> <a href="/posts/<%= post._id %>"> Read More </a> </p>
+  <% }); %>
+  <div class="compose">
+    <form action="/" method="post">
+      <button class="btn btn-lg btn-primary" type="submit" name="button">Compose A Blog</button>
+    </form>
+  </div>
+<%- include("partials/footer"); -%>
